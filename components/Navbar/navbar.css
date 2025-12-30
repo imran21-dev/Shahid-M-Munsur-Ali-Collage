@@ -1,11 +1,11 @@
 .navbar {
-  @apply w-full px-8;
+  @apply w-full px-24 py-1;
 
   .navbar__container {
     @apply flex items-center justify-between;
 
     .navbar__menu {
-      @apply flex  uppercase;
+      @apply flex  uppercase bg-background border border-foreground/10 rounded-lg p-1;
     }
   }
 }
