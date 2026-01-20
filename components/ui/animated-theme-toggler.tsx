@@ -6,8 +6,7 @@ import { flushSync } from "react-dom";
 
 import { cn } from "@/lib/utils";
 
-interface AnimatedThemeTogglerProps
-  extends React.ComponentPropsWithoutRef<"button"> {
+interface AnimatedThemeTogglerProps extends React.ComponentPropsWithoutRef<"button"> {
   duration?: number;
 }
 
@@ -53,7 +52,7 @@ export const AnimatedThemeToggler = ({
     const y = top + height / 2;
     const maxRadius = Math.hypot(
       Math.max(left, window.innerWidth - left),
-      Math.max(top, window.innerHeight - top)
+      Math.max(top, window.innerHeight - top),
     );
 
     document.documentElement.animate(
@@ -67,7 +66,7 @@ export const AnimatedThemeToggler = ({
         duration,
         easing: "ease-in-out",
         pseudoElement: "::view-transition-new(root)",
-      }
+      },
     );
   }, [isDark, duration]);
 

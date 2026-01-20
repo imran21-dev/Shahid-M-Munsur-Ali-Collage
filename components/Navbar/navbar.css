@@ -1,5 +1,5 @@
 .navbar {
-  @apply w-full px-24 py-1;
+  @apply w-full px-24 py-4;
 
   .navbar__container {
     @apply flex items-center justify-between;
