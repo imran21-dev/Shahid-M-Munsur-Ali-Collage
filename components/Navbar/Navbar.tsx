@@ -1,8 +1,8 @@
 "use client";
-import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { CloudDownload, Github, GithubIcon } from "lucide-react";
+import { Github } from "lucide-react";
 import ShinyText from "../ShinyText";
 
 export default function Navbar() {
@@ -60,7 +60,8 @@ export default function Navbar() {
             className="text-xs font-semibold"
           />
         </button>
-        <AnimatedThemeToggler />
+
+        {/* <AnimatedThemeToggler /> */}
       </div>
     </nav>
   );

@@ -38,7 +38,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.className} max-w-[1920px] mx-auto px-[5%]`}>
+      <body className={`${poppins.className} max-w-[1920px] mx-auto px-[15%]`}>
         <AppProvider>
           <Navbar />
 
