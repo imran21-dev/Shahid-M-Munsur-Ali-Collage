@@ -59,9 +59,7 @@
   /* Brand */
   --primary: #2285f0; /* Green */
   --primary-foreground: oklch(0.985 0 0);
-
-  /* Supporting */
-  --secondary: oklch(0.97 0 0);
+  --secondary: #f26d44;
   --secondary-foreground: oklch(0.205 0 0);
 
   --accent: lch(33.61% 44.04 280.71 / 0.24);
@@ -90,8 +88,7 @@
   --primary: #2285f0; /* Same brand green */
   --primary-foreground: oklch(0.205 0 0);
 
-  /* Supporting */
-  --secondary: oklch(0.269 0 0);
+  --secondary: #f26d44;
   --secondary-foreground: oklch(0.985 0 0);
 
   --accent: lch(42.08% 47.54 278.81 / 0.541);
@@ -116,7 +113,4 @@
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
-}
-.f {
-  background-color: blanchedalmond;
 }
