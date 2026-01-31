@@ -1,3 +1,5 @@
+import { AnimatedBeamDemo } from "./SkillsBeam";
+
 export default function Skills() {
   return (
     <div className="py-40 text-background">
@@ -8,6 +10,8 @@ export default function Skills() {
         applications, crafting intuitive experiences, and building the future
         with precision, creativity, and expertise, one line of code at a time.
       </p>
+
+      <AnimatedBeamDemo />
     </div>
   );
 }
