@@ -3,12 +3,13 @@ import { useState } from "react";
 
 import { Dot, Volume2, VolumeX } from "lucide-react";
 import Button from "../Button";
+import BDTime from "../BDTime";
 
 export default function Banner() {
   const [muted, setMuted] = useState(true);
 
   return (
-    <div className="pb-10">
+    <div className="pb-10 relative">
       <video src="/banner.mp4" autoPlay loop muted className="w-full"></video>
       <section className="px-[18.3%] absolute top-[200px] w-full">
         <div className="w-2/4">
@@ -64,6 +65,9 @@ export default function Banner() {
           </div>
         </div>
       </section>
+      <div className="absolute right-36 bottom-80">
+        <BDTime />
+      </div>
     </div>
   );
 }

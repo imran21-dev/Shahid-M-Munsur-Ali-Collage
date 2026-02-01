@@ -1,11 +1,2 @@
-.navbar {
-  @apply w-full px-24 py-4;
-
-  .navbar__container {
-    @apply flex items-center justify-between;
-
-    .navbar__menu {
-      @apply flex  uppercase bg-background border border-foreground/10 rounded-lg p-1;
-    }
-  }
+nav {
 }

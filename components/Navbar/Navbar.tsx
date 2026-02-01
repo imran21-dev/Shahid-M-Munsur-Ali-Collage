@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Github } from "lucide-react";
-import ShinyText from "../ShinyText";
+
 import { useEffect, useState } from "react";
 import logo from "@/images/logo.png";
+import devImage from "@/images/profile.png";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -46,6 +46,23 @@ export default function Navbar() {
     };
   }, []);
 
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const update = () =>
+      setTime(
+        new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Dhaka",
+          hour: "numeric",
+          minute: "numeric",
+        }).format(new Date()),
+      );
+
+    update();
+    const i = setInterval(update, 1000);
+    return () => clearInterval(i);
+  }, []);
+
   return (
     <nav className="absolute z-30 top-0 left-0 px-[18.3%] pt-3 w-full flex items-center justify-between">
       <section className="flex items-center gap-14">
@@ -78,32 +95,23 @@ export default function Navbar() {
       </section>
 
       <div className="flex items-center gap-6">
-        <Link
-          href="https://github.com/DevImran"
-          target="_blank"
-          className="flex text-sm items-center gap-1 hover:opacity-80 transition-opacity"
+        <div
+          className={`border-2  border-foreground/20 rounded-full p-0.5  relative flex items-center gap-1.5 cursor-pointer `}
         >
-          <Github className="w-5" /> Github
-        </Link>
-        <button className="bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-2xl px-3 py-2 cursor-pointer hover:border-foreground/20  duration-200 flex items-center ">
-          <ShinyText
-            text="🔗 Resume"
-            speed={2}
-            delay={0}
-            color="#b5b5b5"
-            shineColor="#ffffff"
-            spread={120}
-            direction="left"
-            yoyo={false}
-            pauseOnHover={false}
-            disabled={false}
-            className="text-xs font-semibold"
-          />
-        </button>
-        <div className="flex items-center gap-2">
-          <span
-            className={`h-1 w-1 rounded-full 
-        ${on ? "bg-secondary shadow-[0_0_20px_2px_#f26d44]" : ""}`}
+          <div className="flex items-center pl-1.5 ">
+            <span
+              className={`size-1 rounded-full 
+        ${on ? "bg-[#22C55E] shadow-[0_0_25px_4px_#22C55E,0_0_0px_0px_rgba(34,197,94,0.8)]" : ""}`}
+            />
+          </div>
+          <h6 className="text-xs text-foreground/80 ">Online</h6>
+          <Image
+            src={devImage}
+            width={1000}
+            height={1000}
+            quality={100}
+            alt="Developer Profile"
+            className={`size-6  rounded-full object-cover  `}
           />
         </div>
       </div>
