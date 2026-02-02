@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "../components/Navbar/navbar.css";
+
 @import "../components/Banner/banner.css";
 
 @custom-variant dark (&:is(.dark *));

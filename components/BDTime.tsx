@@ -41,7 +41,7 @@ export default function BDTime(): JSX.Element {
     <div className="flex flex-col text-center w-48 ">
       <span className="text-9xl font-bold leading-20">{time.h}</span>
 
-      <span className="text-lg font-semibold opacity-80 py-2 text-secondary">
+      <span className="text-lg font-semibold opacity-80 py-1 pb-2 text-secondary">
         {time.s}
       </span>
       <span className="text-9xl font-bold leading-20  text-secondary">
