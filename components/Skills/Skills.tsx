@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AnimatedBeamDemo } from "./SkillsBeam";
 import background from "@/images/3842.jpg";
 import backgroundFader from "@/images/Untitled-1.png";
+import SkillContactButton from "../SkillContactButton";
 
 export default function Skills() {
   return (
@@ -12,7 +13,7 @@ export default function Skills() {
         width={1000}
         height={1000}
         quality={100}
-        className="absolute -top-[1px] w-full h-52 left-0 z-10 mix-blend-multiply "
+        className="absolute -top-1px w-full h-52 left-0 z-10 mix-blend-multiply "
       />
       <Image
         src={background}
@@ -34,6 +35,7 @@ export default function Skills() {
         </p>
 
         <AnimatedBeamDemo />
+        <SkillContactButton />
       </div>
     </div>
   );
