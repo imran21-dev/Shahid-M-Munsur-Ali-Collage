@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { AnimatedBeamDemo } from "./SkillsBeam";
 import background from "@/images/3842.jpg";
+import FaderImage from "@/images/5367.png";
 import backgroundFader from "@/images/Untitled-1.png";
-import SkillContactButton from "../SkillContactButton";
 
 export default function Skills() {
   return (
@@ -23,6 +23,7 @@ export default function Skills() {
         quality={100}
         className="absolute top-0 right-0 z-0 size-full object-cover object-center  pointer-events-none select-none "
       />
+      <div className="bg-linear-to-t from-white to-transparent h-44 absolute bottom-0 left-0 w-full z-10" />
       <div className=" bg-foreground/5 backdrop-blur-3xl px-[18.3%] py-40 ">
         <h2 className="text-7xl font-semibold text-center">
           Tech Stack Mastery
@@ -35,7 +36,6 @@ export default function Skills() {
         </p>
 
         <AnimatedBeamDemo />
-        <SkillContactButton />
       </div>
     </div>
   );
