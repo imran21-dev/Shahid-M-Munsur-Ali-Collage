@@ -4,7 +4,7 @@ import React, { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import profileImage from "@/images/profile.png";
+import profileImage from "@/images/profile.jpg";
 import Image from "next/image";
 
 const Circle = forwardRef<

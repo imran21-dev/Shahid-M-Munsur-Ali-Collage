@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useEffect, useState } from "react";
 import logo from "@/images/logo.png";
-import devImage from "@/images/profile.png";
+import devImage from "@/images/profile.jpg";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -44,23 +44,6 @@ export default function Navbar() {
       active = false;
       clearTimeout(timer);
     };
-  }, []);
-
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const update = () =>
-      setTime(
-        new Intl.DateTimeFormat("en-US", {
-          timeZone: "Asia/Dhaka",
-          hour: "numeric",
-          minute: "numeric",
-        }).format(new Date()),
-      );
-
-    update();
-    const i = setInterval(update, 1000);
-    return () => clearInterval(i);
   }, []);
 
   return (

@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { AppProvider } from "@/context/ContextApi";
-import SmoothScroll from "@/context/SmoothScroll";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -40,15 +39,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.className} max-w-[1920px] mx-auto `}>
-        <SmoothScroll />
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
-            <AppProvider>
-              <Navbar />
-              {children}
-            </AppProvider>
-          </div>
-        </div>
+        <AppProvider>
+          <Navbar />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
