@@ -10,6 +10,7 @@ import {
 import { Highlighter } from "@/components/ui/highlighter";
 import Image from "next/image";
 import { CodeXml } from "lucide-react";
+import GradientText from "../GradientText";
 
 export const HeroParallax = ({
   products,
@@ -19,6 +20,7 @@ export const HeroParallax = ({
     link: string;
     thumbnail: string;
     github: string;
+    idx: number;
   }[];
 }) => {
   const firstRow = products.slice(0, 5);
@@ -60,7 +62,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] bg-background py-40 overflow-hidden  antialiased relative z-20 flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] bg-background py-40 overflow-hidden  antialiased relative z-20 flex flex-col self-auto perspective-[1000px] transform-3d"
     >
       <Header />
       <motion.div
@@ -77,7 +79,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.idx}
             />
           ))}
         </motion.div>
@@ -86,7 +88,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.idx}
             />
           ))}
         </motion.div>
@@ -95,7 +97,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.idx}
             />
           ))}
         </motion.div>
@@ -124,14 +126,15 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="px-[18.3%] relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+      <h1 className="text-2xl md:text-7xl font-bold text-foreground">
         The{" "}
-        <Highlighter action="underline" color="#FF9800">
+        <Highlighter action="underline" color="#FF9FFC">
           Ultimate
         </Highlighter>{" "}
         <br /> development studio
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+
+      <p className="max-w-2xl text-base md:text-xl mt-8 text-foreground/80">
         I build beautiful, high-performance web experiences using modern
         technologies and frameworks. Passionate about clean code and thoughtful
         design, I turn ideas into impactful digital products.

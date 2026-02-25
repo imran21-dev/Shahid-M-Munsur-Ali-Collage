@@ -1,6 +1,13 @@
 import React, { useRef, useEffect, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import "./MagicBento.css";
+import Image, { StaticImageData } from "next/image";
+import img from "@/images/seo.jpg";
+import img2 from "@/images/deploy.jpg";
+import img3 from "@/images/frontend.jpg";
+import img4 from "@/images/responsive.jpg";
+import img5 from "@/images/backend.jpg";
+import img6 from "@/images/api.jpg";
 
 export interface BentoCardProps {
   color?: string;
@@ -9,6 +16,7 @@ export interface BentoCardProps {
   label?: string;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
+  img: string | StaticImageData;
 }
 
 export interface BentoProps {
@@ -33,39 +41,45 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: "#0A0A0A",
-    title: "Analytics",
-    description: "Track user behavior",
-    label: "Custom Website Development",
+    title: "SEO Optimization",
+    description: "Improve search rankings and boost website performance",
+    label: "SEO & Speed",
+    img: img,
   },
   {
     color: "#0A0A0A",
-    title: "Dashboard",
-    description: "Centralized data view",
-    label: "Responsive Website Design",
+    title: "Deployment",
+    description: "Launch and manage applications with reliable hosting",
+    label: "Deployment & Hosting",
+    img: img2,
   },
   {
     color: "#0A0A0A",
-    title: "Collaboration",
-    description: "Work together seamlessly",
+    title: "Frontend Engineering",
+    description: "Build modern, interactive, and user-focused interfaces",
     label: "Frontend Development",
+    img: img3,
   },
   {
     color: "#0A0A0A",
-    title: "Automation",
-    description: "Streamline workflows",
-    label: "Full-Stack Web Application Development",
+    title: "Responsive Design",
+    description: "Create seamless experiences across all devices",
+    label: "Responsive Website Design",
+    img: img4,
   },
   {
     color: "#0A0A0A",
-    title: "Integration",
-    description: "Connect favorite tools",
+    title: "Backend Systems",
+    description: "Develop secure and scalable server-side solutions",
     label: "Backend Development",
+    img: img5,
   },
   {
     color: "#0A0A0A",
-    title: "Security",
-    description: "Enterprise-grade protection",
+    title: "API Development",
+    description: "Design and integrate robust RESTful APIs",
     label: "REST API Development",
+    img: img6,
   },
 ];
 
@@ -583,12 +597,14 @@ const MagicBento: React.FC<BentoProps> = ({
 
       <BentoCardGrid gridRef={gridRef}>
         {cardData.map((card, index) => {
-          const baseClassName = `magic-bento-card ${textAutoHide ? "magic-bento-card--text-autohide" : ""} ${enableBorderGlow ? "magic-bento-card--border-glow" : ""}`;
+          const baseClassName = `magic-bento-card  ${textAutoHide ? "magic-bento-card--text-autohide" : ""} ${enableBorderGlow ? "magic-bento-card--border-glow" : ""}`;
           const cardProps = {
             className: baseClassName,
             style: {
               backgroundColor: card.color,
               "--glow-color": glowColor,
+              padding: "20px",
+              paddingBottom: "0px",
             } as React.CSSProperties,
           };
 
@@ -604,14 +620,26 @@ const MagicBento: React.FC<BentoProps> = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <div className="magic-bento-card__header">
-                  <div className="magic-bento-card__label">{card.label}</div>
+                <div className="magic-bento-card__header ">
+                  <div className="magic-bento-card__label font-medium">
+                    {card.label}
+                  </div>
                 </div>
-                <div className="magic-bento-card__content">
-                  <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <p className="magic-bento-card__description">
-                    {card.description}
-                  </p>
+                <div className="pt-2">
+                  <Image
+                    src={card.img}
+                    alt="Service Image"
+                    width={1000}
+                    height={1000}
+                    quality={100}
+                    className="w-full h-full   rounded-lg"
+                  />
+                  <div className="w-full absolute bottom-0 left-0 pl-7 pb-6 bg-linear-to-t from-background via-background/90 to-transparent">
+                    <h2 className="text-sm font-medium opacity-70">
+                      {card.title}
+                    </h2>
+                    <p className="text-xs opacity-50">{card.description}</p>
+                  </div>
                 </div>
               </ParticleCard>
             );
@@ -705,6 +733,7 @@ const MagicBento: React.FC<BentoProps> = ({
                     top: ${y - maxDistance}px;
                     pointer-events: none;
                     z-index: 1000;
+                    
                   `;
 
                   el.appendChild(ripple);

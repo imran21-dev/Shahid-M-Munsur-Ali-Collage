@@ -2,10 +2,21 @@
 import { motion } from "motion/react";
 import { LayoutTextFlip } from "../ui/layout-text-flip";
 import MagicBento from "../MagicBento";
+import bgImg from "@/images/2148133106.jpg";
+import Image from "next/image";
 
 export default function Services() {
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute top-0 left-0 h-full ">
+        <Image
+          src={bgImg}
+          alt="bg Image"
+          width={1920}
+          height={1080}
+          className="h-full mix-blend-lighten opacity-60"
+        />
+      </div>
       <div className="px-[18.3%] relative z-10">
         <motion.div className="relative flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
           <LayoutTextFlip
