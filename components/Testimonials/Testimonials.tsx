@@ -85,14 +85,14 @@ const ReviewCard = ({
 
 export default function Testimonials() {
   return (
-    <div className="relative py-20">
+    <div className="relative pb-20 pt-40">
       <div className="absolute top-0 left-0 h-full">
         <Image
           src={bgImg}
           alt="bg Image"
           width={1920}
           height={1080}
-          className="h-full mix-blend-lighten opacity-60 rotate-180 scale-x-[-1]"
+          className="h-full mix-blend-lighten  opacity-90 rotate-180 "
         />
       </div>
       <div className="px-[18.3%] z-10 relative">
@@ -137,8 +137,8 @@ export default function Testimonials() {
             "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
           )}
         />
-        <div className="absolute bottom-0 left-0 h-20 w-full bg-linear-to-t from-background via-background/80 to-transparents" />
       </div>
+      <div className="absolute z-50 bottom-0 left-0 h-20 w-full bg-linear-to-t from-background via-background/80 to-transparents" />
     </div>
   );
 }

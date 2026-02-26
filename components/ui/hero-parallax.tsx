@@ -7,10 +7,9 @@ import {
   useSpring,
   MotionValue,
 } from "motion/react";
-import { Highlighter } from "@/components/ui/highlighter";
+
 import Image from "next/image";
 import { CodeXml } from "lucide-react";
-import GradientText from "../GradientText";
 
 export const HeroParallax = ({
   products,
@@ -127,10 +126,7 @@ export const Header = () => {
   return (
     <div className="px-[18.3%] relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold text-foreground">
-        The{" "}
-        <Highlighter action="underline" color="#FF9FFC">
-          Ultimate
-        </Highlighter>{" "}
+        The Ultimate
         <br /> development studio
       </h1>
 

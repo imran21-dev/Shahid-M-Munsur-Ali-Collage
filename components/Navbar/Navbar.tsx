@@ -2,14 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
-import { useEffect, useState } from "react";
 import logo from "@/images/logo.png";
 import devImage from "@/images/profile.jpg";
 import Image from "next/image";
+import { useAppContext } from "@/context/ContextApi";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { on } = useAppContext();
 
   const links = [
     { name: "Home", href: "/" },
@@ -19,32 +19,6 @@ export default function Navbar() {
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
-
-  const [on, setOn] = useState(true);
-
-  useEffect((): (() => void) => {
-    let timer: ReturnType<typeof setTimeout>;
-    let active = true;
-
-    const blink = (): void => {
-      if (!active) return;
-
-      // Fast + irregular like router signal
-      const delay: number = Math.random() * 250 + 80; // 80ms – 330ms
-
-      timer = setTimeout(() => {
-        setOn(Math.random() > 0.35); // random ON/OFF pattern
-        blink();
-      }, delay);
-    };
-
-    blink();
-
-    return (): void => {
-      active = false;
-      clearTimeout(timer);
-    };
-  }, []);
 
   return (
     <nav className="absolute z-30 top-0 left-0 px-[18.3%] pt-3 w-full flex items-center justify-between">

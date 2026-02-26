@@ -1,20 +1,40 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type AppContextType = {
-  theme: string;
-  setTheme: (v: string) => void;
-  muted: boolean;
-  setMuted: (v: boolean) => void;
+  on: boolean;
 };
 
 const AppContext = createContext<AppContextType | null>(null);
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState("light");
-  const [muted, setMuted] = useState(false);
+  const [on, setOn] = useState(true);
 
-  const value = { theme, setTheme, muted, setMuted };
+  useEffect((): (() => void) => {
+    let timer: ReturnType<typeof setTimeout>;
+    let active = true;
+
+    const blink = (): void => {
+      if (!active) return;
+
+      // Fast + irregular like router signal
+      const delay: number = Math.random() * 250 + 80; // 80ms – 330ms
+
+      timer = setTimeout(() => {
+        setOn(Math.random() > 0.35); // random ON/OFF pattern
+        blink();
+      }, delay);
+    };
+
+    blink();
+
+    return (): void => {
+      active = false;
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const value = { on };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

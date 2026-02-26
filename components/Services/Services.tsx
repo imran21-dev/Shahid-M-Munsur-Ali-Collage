@@ -4,8 +4,12 @@ import { LayoutTextFlip } from "../ui/layout-text-flip";
 import MagicBento from "../MagicBento";
 import bgImg from "@/images/2148133106.jpg";
 import Image from "next/image";
+import { Dot } from "lucide-react";
+import { useAppContext } from "@/context/ContextApi";
 
 export default function Services() {
+  const { on } = useAppContext();
+
   return (
     <div className="relative">
       <div className="absolute top-0 left-0 h-full ">
@@ -46,6 +50,31 @@ export default function Services() {
           glowColor="132, 0, 255"
           disableAnimations={false}
         />
+
+        <div className="flex items-end flex-col-reverse justify-between w-full px-5">
+          <div className="flex gap-2">
+            <div className="flex items-center pt-1.5 ">
+              <span
+                className={`size-1 rounded-full 
+        ${on ? "bg-[#22C55E] shadow-[0_0_25px_4px_#22C55E,0_0_0px_0px_rgba(34,197,94,0.8)]" : ""}`}
+              />
+            </div>
+            <ul className="flex justify-center text-sm font-semibold pt-2 text-background">
+              <li className="flex">
+                Create <Dot className="opacity-30" />
+              </li>
+              <li className="flex">Optimize</li>
+              <li className="flex">
+                <Dot className="opacity-30" /> Elevate
+              </li>
+            </ul>
+          </div>
+          <h5 className="text-xs font-semibold    text-right text-background ">
+            From concept to deployment, I handle everything with precision and
+            care. <br /> All you need to do is share your idea — I’ll handle the
+            rest.
+          </h5>
+        </div>
       </div>
     </div>
   );

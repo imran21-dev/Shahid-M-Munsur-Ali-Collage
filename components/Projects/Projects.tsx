@@ -153,7 +153,7 @@ export default function Projects() {
       <div className="w-full h-20 bg-linear-to-t from-background via-background/80 to-transparent absolute top-80 left-0"></div>
 
       <HeroParallax products={products} />
-      <div className="relative z-20 w-full flex justify-center -mt-20 pb-20">
+      <div className="relative z-20 w-full flex justify-center -mt-20 ">
         <StyledWrapper>
           <button className="flex items-center gap-2">
             Connect with me <ArrowRight />
