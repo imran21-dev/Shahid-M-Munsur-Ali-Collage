@@ -1,7 +1,103 @@
-import React from "react";
+"use client";
+import {
+  Field,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import styled from "styled-components";
+import { Textarea } from "../ui/textarea";
+import { useState } from "react";
+import countries from "i18n-iso-countries";
+import en from "i18n-iso-countries/langs/en.json";
+import { CircleCheck, CircleX, Loader } from "lucide-react";
+import { toast } from "sonner";
+
+// Register English locale
+countries.registerLocale(en);
+
+// Create typed country list
+type Country = {
+  code: string;
+  name: string;
+};
+
+const countryList: Country[] = Object.entries(
+  countries.getNames("en", { select: "official" }),
+).map(([code, name]) => ({
+  code,
+  name,
+}));
 
 const Card = () => {
+  const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
+    event.preventDefault();
+    setLoading(true);
+    const form = event.currentTarget;
+
+    const name = (form.elements.namedItem("name") as HTMLInputElement)?.value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
+      ?.value;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "a4282212-2c5d-4fd6-92bb-52a6a6c5358e",
+          name,
+          email,
+          message,
+          Country: value,
+        }),
+      });
+
+      const result: { success: boolean; message?: string } =
+        await response.json();
+
+      setLoading(false);
+
+      if (result.success) {
+        setStatus("success");
+        toast.success("Message sent to Imran 😛", {
+          position: "bottom-right",
+        });
+        form.reset();
+      } else {
+        setStatus("error");
+        toast.error("Failed to send message 😔", { position: "bottom-right" });
+      }
+    } catch (error) {
+      toast.error("Failed to send message 😔", { position: "bottom-right" });
+      console.error("Error submitting form:", error);
+      setLoading(false);
+      setStatus("error");
+    }
+
+    // Hide success/error after 3 seconds
+    setTimeout(() => {
+      setStatus("idle");
+    }, 3000);
+  };
+
   return (
     <StyledWrapper>
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
@@ -40,7 +136,92 @@ const Card = () => {
         <div className="card-border">
           <div className="spin spin-inside" />
         </div>
-        <div className="card" />
+        <div className="card">
+          <form onSubmit={handleSubmit} className="w-full p-8">
+            <FieldGroup>
+              <div className="grid grid-cols-2 gap-4">
+                <Field>
+                  <FieldLabel htmlFor="form-name">
+                    Name<span className="text-destructive">*</span>
+                  </FieldLabel>
+                  <Input
+                    name="name"
+                    id="form-name"
+                    type="text"
+                    placeholder="John Doe"
+                    required
+                    className="border-foreground/20"
+                  />
+                </Field>
+                <Field>
+                  <FieldLabel htmlFor="form-country">Country</FieldLabel>
+                  <Select value={value} onValueChange={setValue}>
+                    <SelectTrigger
+                      id="form-country"
+                      className="border-foreground/20"
+                    >
+                      <SelectValue placeholder="Select a country" />
+                    </SelectTrigger>
+
+                    <SelectContent className="bg-background/10 backdrop-blur-lg overflow-y-auto border-foreground/20">
+                      {countryList.map((country) => (
+                        <SelectItem key={country.code} value={country.code}>
+                          {country.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </Field>
+              </div>
+
+              <Field>
+                <FieldLabel htmlFor="form-email">
+                  Email <span className="text-destructive">*</span>
+                </FieldLabel>
+                <Input
+                  name="email"
+                  id="form-email"
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                  className="border-foreground/20"
+                />
+                <FieldDescription>
+                  I&apos;ll never share your email with anyone.
+                </FieldDescription>
+              </Field>
+
+              <Field>
+                <FieldLabel htmlFor="form-message">
+                  Message <span className="text-destructive">*</span>
+                </FieldLabel>
+                <Textarea
+                  name="message"
+                  className="h-28 resize-none border-foreground/20"
+                  required
+                  placeholder="Type your message here."
+                />
+              </Field>
+              <div>
+                <button
+                  type="submit"
+                  className="bg-foreground/10 px-4 py-2 text-sm font-medium rounded-full cursor-pointer ring-offset-2 hover:ring-2 hover:ring-secondary dark:ring-offset-black flex items-center gap-2 transition-all duration-700 ease-in-out"
+                >
+                  {loading && <Loader className="w-4 h-4 animate-spin" />}
+                  {status === "success" && !loading && (
+                    <CircleCheck className="w-4 h-4 text-green-500 transition-all duration-300" />
+                  )}
+                  {status === "error" && !loading && (
+                    <CircleX className="w-4 h-4 text-red-500 transition-all duration-300" />
+                  )}
+                  <span className="transition-all duration-700">
+                    Send message
+                  </span>
+                </button>
+              </div>
+            </FieldGroup>
+          </form>
+        </div>
       </div>
     </StyledWrapper>
   );
