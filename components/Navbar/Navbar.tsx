@@ -8,17 +8,10 @@ import Image from "next/image";
 import { useAppContext } from "@/context/ContextApi";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const { on } = useAppContext();
+  const pathname = usePathname();
 
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Skills", href: "/skills" },
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-  ];
+  const isHome = pathname === "/";
 
   return (
     <nav className="absolute z-30 top-0 left-0 px-[18.3%] pt-3 w-full flex items-center justify-between">
@@ -40,19 +33,48 @@ export default function Navbar() {
           </span>
         </Link>
         <div>
-          {links.map((link) => {
-            const isActive = pathname === link.href;
-
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${isActive ? "text-primary" : "text-foreground"} text-sm ml-5  hover:text-primary transition-colors `}
-              >
-                {link.name}
+          <ul className="flex items-center gap-3">
+            <li className="footer-link nav-link">
+              {isHome ? (
+                <a href="#home">Home</a>
+              ) : (
+                <Link href="/#home">Home</Link>
+              )}
+            </li>
+            <li className="footer-link nav-link">
+              {isHome ? (
+                <a href="#skills">Skills</a>
+              ) : (
+                <Link href="/#skills">Skills</Link>
+              )}
+            </li>
+            <li className="footer-link nav-link">
+              {isHome ? (
+                <a href="#projects">Projects</a>
+              ) : (
+                <Link href="/#projects">Projects</Link>
+              )}
+            </li>
+            <li className="footer-link nav-link">
+              {isHome ? (
+                <a href="#services">Services</a>
+              ) : (
+                <Link href="/#services">Services</Link>
+              )}
+            </li>
+            <li className="footer-link nav-link">
+              {isHome ? (
+                <a href="#contact">Contact</a>
+              ) : (
+                <Link href="/#contact">Contact</Link>
+              )}
+            </li>
+            <li>
+              <Link href="/about" className="footer-link  nav-link">
+                About me
               </Link>
-            );
-          })}
+            </li>
+          </ul>
         </div>
       </section>
 

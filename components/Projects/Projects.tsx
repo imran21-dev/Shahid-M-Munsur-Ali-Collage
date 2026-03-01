@@ -130,7 +130,7 @@ const products = [
 ];
 export default function Projects() {
   return (
-    <div id="projects" className="py-20 relative pt-96">
+    <div className="py-20 relative pt-96">
       <div className="absolute top-56 left-0 w-full h-full  z-10 overflow-hidden">
         <CurvedLoop
           marqueeText="Web Developer ✦ UI Enthusiast ✦ Problem Solver ✦ Next.js Specialist ✦ Creative Thinker ✦"

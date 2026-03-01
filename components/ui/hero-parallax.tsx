@@ -124,7 +124,10 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="px-[18.3%] relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-foreground">
+      <h1
+        id="projects"
+        className="text-2xl md:text-7xl font-bold text-foreground"
+      >
         The Ultimate
         <br /> development studio
       </h1>

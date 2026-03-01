@@ -3,6 +3,8 @@ import React from "react";
 import logo from "@/images/logo.png";
 import Image from "next/image";
 import { Sparkles } from "@/components/sparkles";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 export default function Footer() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -10,6 +12,10 @@ export default function Footer() {
       (window as any).lenis?.scrollTo(element);
     }
   };
+
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
 
   return (
     <div className="relative pb-20">
@@ -48,45 +54,40 @@ export default function Footer() {
           <div className="pt-20 mx-auto w-max">
             <h6 className="opacity-50 text-xl font-light">Useful Links</h6>
             <ul className="flex pt-2   gap-3 text-sm">
-              <li>
-                <button
-                  className="footer-link"
-                  onClick={() => scrollToSection("home")}
-                >
-                  Home
-                </button>
+              <li className="footer-link">
+                {isHome ? (
+                  <a href="#home">Home</a>
+                ) : (
+                  <Link href="/#home">Home</Link>
+                )}
               </li>
-              <li>
-                <button
-                  className="footer-link"
-                  onClick={() => scrollToSection("skills")}
-                >
-                  Skills
-                </button>
+              <li className="footer-link">
+                {isHome ? (
+                  <a href="#skills">Skills</a>
+                ) : (
+                  <Link href="/#skills">Skills</Link>
+                )}
               </li>
-              <li>
-                <button
-                  className="footer-link"
-                  onClick={() => scrollToSection("projects")}
-                >
-                  Projects
-                </button>
+              <li className="footer-link">
+                {isHome ? (
+                  <a href="#projects">Projects</a>
+                ) : (
+                  <Link href="/#projects">Projects</Link>
+                )}
               </li>
-              <li>
-                <button
-                  className="footer-link"
-                  onClick={() => scrollToSection("services")}
-                >
-                  Services
-                </button>
+              <li className="footer-link">
+                {isHome ? (
+                  <a href="#services">Services</a>
+                ) : (
+                  <Link href="/#services">Services</Link>
+                )}
               </li>
-              <li>
-                <button
-                  className="footer-link"
-                  onClick={() => scrollToSection("contact")}
-                >
-                  Contact
-                </button>
+              <li className="footer-link">
+                {isHome ? (
+                  <a href="#contact">Contact</a>
+                ) : (
+                  <Link href="/#contact">Contact</Link>
+                )}
               </li>
             </ul>
           </div>

@@ -175,3 +175,9 @@
 .footer-link {
   @apply cursor-pointer opacity-50 hover:opacity-100 transition duration-200;
 }
+.nav-link {
+  @apply opacity-80 hover:opacity-100 text-sm;
+}
+html {
+  scroll-behavior: smooth;
+}

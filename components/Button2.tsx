@@ -1,12 +1,15 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
 const Button2 = () => {
   return (
     <StyledWrapper>
-      <button>
-        <span> Inspect Me</span>
-      </button>
+      <Link className="cursor-crosshair" href="/about">
+        <button>
+          <span>Inspect Me</span>
+        </button>
+      </Link>
     </StyledWrapper>
   );
 };
