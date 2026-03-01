@@ -1,3 +1,31 @@
+// "use client";
+
+// import { useEffect } from "react";
+// import Lenis from "@studio-freight/lenis";
+
+// const SmoothScroll = () => {
+//   useEffect(() => {
+//     const lenis = new Lenis({
+//       lerp: 0.08,
+//       smoothWheel: true,
+//     });
+
+//     function raf(time: number) {
+//       lenis.raf(time);
+//       requestAnimationFrame(raf);
+//     }
+
+//     requestAnimationFrame(raf);
+
+//     return () => {
+//       lenis.destroy();
+//     };
+//   }, []);
+
+//   return null;
+// };
+
+// export default SmoothScroll;
 "use client";
 
 import { useEffect } from "react";
@@ -9,6 +37,9 @@ const SmoothScroll = () => {
       lerp: 0.08,
       smoothWheel: true,
     });
+
+    // 👇 make it globally accessible
+    (window as any).lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);

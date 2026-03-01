@@ -252,7 +252,7 @@ const StyledWrapper = styled.div`
 
   .backdrop {
     position: absolute;
-    inset: -100%;
+    inset: -50%;
     background: radial-gradient(
       circle at 50% 50%,
       #0000 0,

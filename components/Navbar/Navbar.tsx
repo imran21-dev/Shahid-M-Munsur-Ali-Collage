@@ -23,16 +23,21 @@ export default function Navbar() {
   return (
     <nav className="absolute z-30 top-0 left-0 px-[18.3%] pt-3 w-full flex items-center justify-between">
       <section className="flex items-center gap-14">
-        <Link href="/" className="flex items-center text-xl font-bold">
+        <Link
+          href="/"
+          className="flex items-center gap-1.5 text-xl font-medium"
+        >
           <Image
             src={logo}
             width={2000}
             height={2000}
             quality={100}
             alt="Logo"
-            className="w-10"
+            className="w-6 opacity-50"
           />
-          Imran
+          <span>
+            Dev<span className="opacity-50">Imran</span>.
+          </span>
         </Link>
         <div>
           {links.map((link) => {

@@ -49,7 +49,7 @@ export default function HorizontalScroll() {
 
   return (
     <ReactLenis root>
-      <main>
+      <main id="services">
         <article>
           {/* HEADER */}
           <header className=" relative w-full  grid place-content-center h-[80vh]">
@@ -142,7 +142,7 @@ export default function HorizontalScroll() {
               <h3 className="text-7xl font-bold ">
                 <CountUp
                   from={0}
-                  to={10}
+                  to={13}
                   separator=","
                   direction="up"
                   duration={1}
@@ -156,7 +156,7 @@ export default function HorizontalScroll() {
               <h3 className="text-7xl font-bold">
                 <CountUp
                   from={0}
-                  to={3}
+                  to={7}
                   separator=","
                   direction="up"
                   duration={1}

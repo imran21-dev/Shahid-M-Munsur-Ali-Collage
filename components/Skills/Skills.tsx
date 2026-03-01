@@ -7,7 +7,7 @@ import { Dot } from "lucide-react";
 
 export default function Skills() {
   return (
-    <div className=" text-background relative bg-foreground">
+    <div id="skills" className=" text-background relative bg-foreground">
       <Image
         src={backgroundFader}
         alt="Fader"

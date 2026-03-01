@@ -130,7 +130,7 @@ const products = [
 ];
 export default function Projects() {
   return (
-    <div className="py-20 relative pt-96">
+    <div id="projects" className="py-20 relative pt-96">
       <div className="absolute top-56 left-0 w-full h-full  z-10 overflow-hidden">
         <CurvedLoop
           marqueeText="Web Developer ✦ UI Enthusiast ✦ Problem Solver ✦ Next.js Specialist ✦ Creative Thinker ✦"
@@ -156,7 +156,7 @@ export default function Projects() {
       <div className="relative z-20 w-full flex justify-center -mt-20 ">
         <StyledWrapper>
           <button className="flex items-center gap-2">
-            Connect with me <ArrowRight />
+            Start a project <ArrowRight />
             <div className="star-3">
               <svg
                 xmlnsXlink="http://www.w3.org/1999/xlink"

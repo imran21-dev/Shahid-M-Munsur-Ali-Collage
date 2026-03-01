@@ -171,3 +171,7 @@
 .group:hover .group-hover\:paused {
   animation-play-state: paused !important;
 }
+
+.footer-link {
+  @apply cursor-pointer opacity-50 hover:opacity-100 transition duration-200;
+}

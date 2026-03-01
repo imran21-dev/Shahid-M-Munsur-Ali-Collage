@@ -7,6 +7,7 @@ import {
   useSpring,
   MotionValue,
 } from "motion/react";
+import logo from "@/images/logo.png";
 
 import Image from "next/image";
 import { CodeXml } from "lucide-react";
@@ -106,17 +107,15 @@ export const HeroParallax = ({
           rotateZ,
           opacity,
         }}
-        className="w-full h-max absolute top-1/5 left-0  -z-10 "
+        className="w-full  h-max absolute top-1/4 left-0  -z-10 "
       >
-        <div className="w-full h-full absolute top-0 left-0 bg-linear-to-b from-background via-transparent to-background" />
-
-        <video
-          src="/anime.mp4"
-          autoPlay
-          loop
-          muted
-          className=" pointer-events-none select-none"
-        ></video>
+        <Image
+          src={logo}
+          alt="logo"
+          width={1000}
+          height={1000}
+          className="w-96 mx-auto opacity-20 object-cover pointer-events-none select-none"
+        />
       </motion.div>
     </div>
   );

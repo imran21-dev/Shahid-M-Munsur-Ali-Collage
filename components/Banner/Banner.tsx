@@ -9,8 +9,8 @@ export default function Banner() {
   const [muted, setMuted] = useState(true);
 
   return (
-    <div className="pb-10 relative">
-      <video src="/banner.mp4" autoPlay loop muted className="w-full"></video>
+    <div id="home" className="pb-10 relative">
+      <video src="/banner.mp4" autoPlay loop muted className="w-full "></video>
       <section className="px-[18.3%] absolute top-[200px] w-full">
         <div className="w-2/4">
           <h1 className="text-[80px] leading-20 font-semibold  ">
