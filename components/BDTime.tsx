@@ -1,4 +1,5 @@
 "use client";
+
 import { Clock } from "lucide-react";
 import { JSX, useEffect, useState } from "react";
 
@@ -38,19 +39,21 @@ export default function BDTime(): JSX.Element {
   }, []);
 
   return (
-    <div className="flex flex-col text-center w-48 ">
-      <span className="text-9xl font-bold leading-20">{time.h}</span>
+    <div className={`flex flex-col text-center md:w-48 `}>
+      <span className="text-5xl xl:text-9xl font-bold leading-5 xl:leading-20">
+        {time.h}
+      </span>
 
-      <span className="text-lg font-semibold opacity-80 py-1 pb-2 text-secondary">
+      <span className="text-xs xl:text-lg md:font-semibold opacity-80 py-2 xl:pb-2 text-secondary">
         {time.s}
       </span>
-      <span className="text-9xl font-bold leading-20  text-secondary">
+      <span className="text-5xl xl:text-9xl font-bold leading-5 xl:leading-20  text-secondary">
         {time.m}
       </span>
 
-      <h5 className="ml-1 text-xs opacity-80  flex items-center justify-center gap-1 pt-2 text-secondary">
-        <Clock className="w-4 " />
-        BD
+      <h5 className="ml-1 text-[9px] xl:text-xs opacity-80  flex items-center justify-center gap-0.5 pt-1 xl:pt-2 text-secondary">
+        <Clock className="w-2 xl:w-4 " />
+        <span className="pt-0.5"> BD</span>
       </h5>
     </div>
   );

@@ -15,7 +15,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-background/10 bg-foreground backdrop-blur-3xl p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-10 md:size-12 items-center justify-center rounded-full border-2 border-background/10 bg-foreground backdrop-blur-3xl p-2 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className,
       )}
     >
@@ -42,11 +42,11 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative px-10 flex h-[550px] w-full  justify-center pt-20 overflow-hidden"
+      className="relative md:px-10 flex h-[550px] w-full  justify-center pt-10 md:pt-20 overflow-hidden"
       ref={containerRef}
     >
       <div className="flex size-full max-h-[200px] flex-col items-stretch justify-between gap-10">
-        <div className="flex flex-row items-center justify-between w-8/12 mx-auto">
+        <div className="flex flex-row items-center justify-between w-2/4 md:w-8/12 mx-auto">
           <Circle ref={div1Ref} className=" relative">
             <Icons.html />
             <h5 className="absolute -bottom-5 w-max text-center text-xs opacity-70">
@@ -60,7 +60,7 @@ export function AnimatedBeamDemo() {
             </h5>
           </Circle>
         </div>
-        <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
+        <div className="flex flex-row items-center justify-between w-11/12 md:w-10/12 mx-auto">
           <Circle ref={div2Ref} className=" relative">
             <Icons.react />
             <h5 className="absolute -bottom-5 w-max text-center text-xs opacity-70">
@@ -83,7 +83,7 @@ export function AnimatedBeamDemo() {
           </Circle>
           <Circle
             ref={div6Ref}
-            className="size-24 p-0 cursor-pointer hover:scale-150 transition-transform duration-300"
+            className="size-24 md:size-28 p-0 cursor-pointer hover:scale-150 transition-transform duration-300"
           >
             <Image
               src={profileImage}
@@ -101,7 +101,7 @@ export function AnimatedBeamDemo() {
             </h5>
           </Circle>
         </div>
-        <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
+        <div className="flex flex-row items-center justify-between w-11/12 md:w-10/12 mx-auto">
           <Circle ref={div4Ref} className=" relative">
             <Icons.node />
             <h5 className="absolute -bottom-5 w-max text-center text-xs opacity-70">
@@ -115,7 +115,7 @@ export function AnimatedBeamDemo() {
             </h5>
           </Circle>
         </div>
-        <div className="flex flex-row items-center justify-between w-8/12 mx-auto">
+        <div className="flex flex-row items-center justify-between w-2/4 md:w-8/12 mx-auto">
           <Circle ref={div5Ref} className=" relative">
             <Icons.firebase />
             <h5 className="absolute -bottom-5 w-max text-center text-xs opacity-70">
@@ -177,7 +177,7 @@ export function AnimatedBeamDemo() {
         containerRef={containerRef}
         fromRef={div8Ref}
         toRef={div6Ref}
-        curvature={20}
+        curvature={25}
         endYOffset={0}
         reverse
       />
@@ -191,7 +191,7 @@ export function AnimatedBeamDemo() {
         containerRef={containerRef}
         fromRef={div10Ref}
         toRef={div6Ref}
-        curvature={20}
+        curvature={-25}
         endYOffset={0}
         reverse
       />

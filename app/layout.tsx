@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { DM_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { AppProvider } from "@/context/ContextApi";
 import { Toaster } from "sonner";
 import Footer from "@/components/Footer/Footer";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const dm_sans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -40,7 +40,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.className} max-w-[1920px] mx-auto `}>
+      <body className={`${dm_sans.className} max-w-[1920px] mx-auto `}>
         <AppProvider>
           <Navbar />
           {children}

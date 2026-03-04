@@ -5,8 +5,8 @@ import styled from "styled-components";
 const Button2 = () => {
   return (
     <StyledWrapper>
-      <Link className="cursor-crosshair" href="/about">
-        <button>
+      <Link className="cursor-crosshair " href="/about">
+        <button className="h-8 lg:h-[50px] py-0 px-6 lg:px-[30px] text-sm lg:text-base">
           <span>Inspect Me</span>
         </button>
       </Link>
@@ -17,8 +17,6 @@ const Button2 = () => {
 const StyledWrapper = styled.div`
   button {
     position: relative;
-    height: 50px;
-    padding: 0 30px;
     border: 2px solid #000;
     background: #fbfeff;
     user-select: none;
@@ -68,7 +66,6 @@ const StyledWrapper = styled.div`
   }
 
   button span {
-    font-size: 15px;
     z-index: 3;
     position: relative;
     font-weight: 600;

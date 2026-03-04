@@ -10,13 +10,13 @@ export default function page() {
   return (
     <div>
       <div id="smooth-container">
-        <SmoothScroll />
+        {/* <SmoothScroll /> */}
         <Banner />
         <Skills />
-        <Projects />
-        <HorizontalScroll />
-        <Testimonials />
-        <Contact />
+        {/* <Projects /> */}
+        {/* <HorizontalScroll /> */}
+        {/* <Testimonials /> */}
+        {/* <Contact /> */}
       </div>
     </div>
   );

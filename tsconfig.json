@@ -29,7 +29,9 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "components/Services/HorizontalScroll.jsx"
+    "components/Services/HorizontalScroll.jsx",
+    "components/SoundWaveBtn.js",
+    "components/SoundWaveBtn.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -155,7 +155,7 @@ export default function Projects() {
       <HeroParallax products={products} />
       <div className="relative z-20 w-full flex justify-center -mt-20 ">
         <StyledWrapper>
-          <button className="flex items-center gap-2">
+          <a href="#contact" className="flex items-center gap-2">
             Start a project <ArrowRight />
             <div className="star-3">
               <svg
@@ -182,14 +182,14 @@ export default function Projects() {
                 </g>
               </svg>
             </div>
-          </button>
+          </a>
         </StyledWrapper>
       </div>
     </div>
   );
 }
 const StyledWrapper = styled.div`
-  button {
+  a {
     position: relative;
     padding: 6px 35px;
     background: #000000;
@@ -216,12 +216,12 @@ const StyledWrapper = styled.div`
     transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
   }
 
-  button:hover .star-3 {
+  a:hover .star-3 {
     transform: rotate(180deg) scale(1.5);
     transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
   }
 
-  button:hover {
+  a:hover {
     gap: 50px;
     padding-right: 5px;
     transition: all 0.3s ease-in-out;
