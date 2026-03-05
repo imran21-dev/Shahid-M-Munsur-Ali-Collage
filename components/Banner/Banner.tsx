@@ -77,7 +77,7 @@ export default function Banner() {
             )}
           </button>
         </section>
-        <div className="z-10 absolute -bottom-1 xl:bottom-[3%]  origin-right  w-full flex flex-col items-center md:items-start md:pl-[18.3%]">
+        <div className="z-10 absolute -bottom-3 xl:bottom-[3%]  origin-right  w-full flex flex-col items-center md:items-start md:pl-[18.3%]">
           <h3 className="text-[10px] xl:text-sm opacity-50 font-light scale-50 md:scale-100">
             Everything You Need to Build Modern Web Experiences
           </h3>

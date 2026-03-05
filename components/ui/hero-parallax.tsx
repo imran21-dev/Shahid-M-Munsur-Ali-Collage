@@ -135,13 +135,13 @@ export const Header = () => {
     <div className="containe_r relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
       <h1
         id="projects"
-        className="text-2xl md:text-7xl font-semibold text-foreground"
+        className="text-4xl md:text-5xl lg:text-7xl text-foreground"
       >
         The Ultimate
         <br /> development studio
       </h1>
 
-      <p className="max-w-2xl text-base md:text-xl mt-2 md:mt-8 text-foreground/80">
+      <p className="max-w-2xl text-sm md:text-base mt-2 md:mt-8 text-foreground/80">
         I build beautiful, high-performance web experiences using modern
         technologies and frameworks. Passionate about clean code and thoughtful
         design, I turn ideas into impactful digital products.

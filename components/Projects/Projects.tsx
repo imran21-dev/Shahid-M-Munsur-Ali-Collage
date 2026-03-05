@@ -129,7 +129,7 @@ const products = [
 ];
 export default function Projects() {
   return (
-    <div className="py-20 relative pt-52 lg:pt-96">
+    <div className="py-20 relative pt-52 md:pt-72 lg:pt-96">
       <div className="absolute top-20 lg:top-56 left-0 w-full h-full  z-50 overflow-hidden">
         <CurvedLoop
           marqueeText="Web Developer ✦ UI Enthusiast ✦ Problem Solver ✦ Next.js Specialist ✦ Creative Thinker ✦"
@@ -147,13 +147,13 @@ export default function Projects() {
         width={1000}
         height={1000}
         quality={1000}
-        className="absolute -top-1   w-full h-[200px] lg:h-[500px] left-0 z-0 "
+        className="absolute -top-1   w-full h-[200px] md:h-[300px] lg:h-[500px] left-0 z-0 "
       />
-      <div className="w-full h-20 bg-linear-to-t from-background via-background/80 to-transparent absolute z-40 top-32 lg:top-80 left-0"></div>
-      <div className="w-full h-20 bg-linear-to-b from-background via-background/80 to-transparent absolute z-50 top-52 lg:top-80 left-0 block lg:hidden"></div>
+      <div className="w-full h-20 bg-linear-to-t from-background via-background/80 to-transparent absolute z-40 top-32 md:top-54 lg:top-80 left-0 "></div>
+      <div className="w-full h-20 bg-linear-to-b from-background via-background/80 to-transparent absolute z-50 top-52  md:top-74 left-0 block lg:hidden"></div>
 
       <HeroParallax products={products} />
-      <div className="relative z-20 w-full flex justify-center lg:-mt-20 ">
+      <div className="relative z-50 w-full flex justify-center lg:-mt-20 ">
         <Button label="Start a Project" targetId="contact" />
       </div>
     </div>

@@ -129,7 +129,7 @@ const Card = () => {
         </filter>
       </svg>
 
-      <div className="card-container">
+      <div className="card-container w-[350px] md:w-[600px] h-[400px] md:h-[500px]">
         <div className="spin spin-blur" />
         <div className="spin spin-intense" />
         <div className="backdrop" />
@@ -137,11 +137,14 @@ const Card = () => {
           <div className="spin spin-inside" />
         </div>
         <div className="card">
-          <form onSubmit={handleSubmit} className="w-full p-8">
-            <FieldGroup>
+          <form onSubmit={handleSubmit} className="w-full p-5 md:p-8">
+            <FieldGroup className="gap-4 md:gap-7">
               <div className="grid grid-cols-2 gap-4">
                 <Field>
-                  <FieldLabel htmlFor="form-name">
+                  <FieldLabel
+                    htmlFor="form-name"
+                    className="text-xs md:text-sm"
+                  >
                     Name<span className="text-destructive">*</span>
                   </FieldLabel>
                   <Input
@@ -150,20 +153,25 @@ const Card = () => {
                     type="text"
                     placeholder="John Doe"
                     required
-                    className="border-foreground/20"
+                    className="border-foreground/20 text-sm md:text-base"
                   />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="form-country">Country</FieldLabel>
+                  <FieldLabel
+                    htmlFor="form-country"
+                    className="text-xs md:text-sm"
+                  >
+                    Country
+                  </FieldLabel>
                   <Select value={value} onValueChange={setValue}>
                     <SelectTrigger
                       id="form-country"
-                      className="border-foreground/20"
+                      className="border-foreground/20 "
                     >
                       <SelectValue placeholder="Select a country" />
                     </SelectTrigger>
 
-                    <SelectContent className="bg-background/10 backdrop-blur-lg overflow-y-auto border-foreground/20">
+                    <SelectContent className="bg-background/10 text-foreground backdrop-blur-lg overflow-y-auto border-foreground/20">
                       {countryList.map((country) => (
                         <SelectItem key={country.code} value={country.code}>
                           {country.name}
@@ -175,7 +183,7 @@ const Card = () => {
               </div>
 
               <Field>
-                <FieldLabel htmlFor="form-email">
+                <FieldLabel htmlFor="form-email" className="text-xs md:text-sm">
                   Email <span className="text-destructive">*</span>
                 </FieldLabel>
                 <Input
@@ -184,20 +192,23 @@ const Card = () => {
                   type="email"
                   placeholder="john@example.com"
                   required
-                  className="border-foreground/20"
+                  className="border-foreground/20 text-sm md:text-base"
                 />
-                <FieldDescription>
+                <FieldDescription className="hidden lg:block">
                   I&apos;ll never share your email with anyone.
                 </FieldDescription>
               </Field>
 
               <Field>
-                <FieldLabel htmlFor="form-message">
+                <FieldLabel
+                  htmlFor="form-message"
+                  className="text-xs md:text-sm"
+                >
                   Message <span className="text-destructive">*</span>
                 </FieldLabel>
                 <Textarea
                   name="message"
-                  className="h-28 resize-none border-foreground/20"
+                  className="h-28   resize-none border-foreground/20 text-sm md:text-base"
                   required
                   placeholder="Type your message here."
                 />
@@ -205,14 +216,16 @@ const Card = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-foreground/10 px-4 py-2 text-sm font-medium rounded-full cursor-pointer ring-offset-2 hover:ring-2 hover:ring-secondary dark:ring-offset-black flex items-center gap-2 transition-all duration-700 ease-in-out"
+                  className="bg-foreground/10 px-4 py-2 text-xs md:text-sm font-medium rounded-full cursor-pointer ring-offset-2 hover:ring-2 hover:ring-secondary dark:ring-offset-black flex items-center gap-2 transition-all duration-700 ease-in-out"
                 >
-                  {loading && <Loader className="w-4 h-4 animate-spin" />}
+                  {loading && (
+                    <Loader className="w-3 md:w-4 h-3 md:h-4 animate-spin" />
+                  )}
                   {status === "success" && !loading && (
-                    <CircleCheck className="w-4 h-4 text-green-500 transition-all duration-300" />
+                    <CircleCheck className="w-3 md:w-4 h-3 md:h-4 text-green-500 transition-all duration-300" />
                   )}
                   {status === "error" && !loading && (
-                    <CircleX className="w-4 h-4 text-red-500 transition-all duration-300" />
+                    <CircleX className="w-3 md:w-4 h-3 md:h-4 text-red-500 transition-all duration-300" />
                   )}
                   <span className="transition-all duration-700">
                     Send message
@@ -230,8 +243,6 @@ const Card = () => {
 const StyledWrapper = styled.div`
   .card-container {
     position: relative;
-    width: 600px;
-    height: 500px;
     border-radius: 1em;
   }
 

@@ -4,11 +4,14 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type AppContextType = {
   on: boolean;
+  isLoading: boolean;
+  setIsLoading: (v: boolean) => void;
 };
 
 const AppContext = createContext<AppContextType | null>(null);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [on, setOn] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
@@ -34,7 +37,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  const value = { on };
+  const value = { on, isLoading, setIsLoading };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

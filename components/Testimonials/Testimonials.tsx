@@ -67,25 +67,29 @@ const ReviewCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         <Image
-          className="rounded-full"
+          className="rounded-full size-7 md:size-8"
           width="32"
           height="32"
           alt="clinets photo"
           src={img}
         />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium ">{name}</figcaption>
-          <p className="text-xs font-medium opacity-80">{username}</p>
+          <figcaption className="text-xs md:text-sm font-medium ">
+            {name}
+          </figcaption>
+          <p className="text-[10px] md:text-xs font-medium opacity-80">
+            {username}
+          </p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-xs md:text-sm">{body}</blockquote>
     </figure>
   );
 };
 
 export default function Testimonials() {
   return (
-    <div className="relative pb-20 pt-40">
+    <div className="relative pb-12 md:pb-20 pt-32 md:pt-40">
       <div className="absolute top-0 left-0 h-full">
         <Image
           src={bgImg}
@@ -95,9 +99,11 @@ export default function Testimonials() {
           className="h-full mix-blend-lighten  opacity-90 rotate-180 "
         />
       </div>
-      <div className="px-[18.3%] z-10 relative">
-        <h3 className="text-7xl font-semibold">Client Experiences</h3>
-        <p className="pt-4 pb-10 opacity-80">
+      <div className="containe_r z-10 relative">
+        <h3 className="text-4xl md:text-5xl lg:text-7xl ">
+          Client Experiences
+        </h3>
+        <p className="pt-2 md:pt-4 pb-6 md:pb-10 opacity-80 text-sm md:text-base">
           Every project is a collaboration. These testimonials highlight the
           experience, process, and satisfaction of the people I’ve worked with.
         </p>

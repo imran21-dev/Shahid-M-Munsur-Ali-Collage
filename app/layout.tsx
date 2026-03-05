@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Poppins } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
 import { AppProvider } from "@/context/ContextApi";
-import { Toaster } from "sonner";
-import Footer from "@/components/Footer/Footer";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import LayoutContent from "@/context/Layoutcontent";
 
 const dm_sans = DM_Sans({
   variable: "--font-dm-sans",
@@ -42,10 +41,8 @@ export default function RootLayout({
       </head>
       <body className={`${dm_sans.className} max-w-[1920px] mx-auto `}>
         <AppProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
+          <LoadingScreen />
+          <LayoutContent>{children}</LayoutContent>
         </AppProvider>
       </body>
     </html>

@@ -26,7 +26,7 @@ export default function Skills() {
       />
       <div className="bg-linear-to-t from-white to-transparent h-44 absolute bottom-0 left-0 w-full z-10" />
       <div className="containe_r py-28  xl:py-40 ">
-        <h3 className="text-4xl xl:text-7xl z-20 relative  font-medium text-center">
+        <h3 className="text-4xl md:text-5xl lg:text-7xl z-20 relative  font-medium text-center">
           Tech Stack Mastery
         </h3>
         <p className="pt-2 md:pt-4 text-sm md:text-base opacity-80 text-center">
