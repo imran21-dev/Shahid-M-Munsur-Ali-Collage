@@ -3,8 +3,7 @@ import FaderImage from "@/images/5367.png";
 import Image from "next/image";
 import { HeroParallax } from "../ui/hero-parallax";
 import CurvedLoop from "../CurvedLoop";
-import { ArrowRight } from "lucide-react";
-import styled from "styled-components";
+import Button from "../Button";
 
 const products = [
   {
@@ -130,15 +129,15 @@ const products = [
 ];
 export default function Projects() {
   return (
-    <div className="py-20 relative pt-96">
-      <div className="absolute top-56 left-0 w-full h-full  z-10 overflow-hidden">
+    <div className="py-20 relative pt-52 lg:pt-96">
+      <div className="absolute top-20 lg:top-56 left-0 w-full h-full  z-50 overflow-hidden">
         <CurvedLoop
           marqueeText="Web Developer ✦ UI Enthusiast ✦ Problem Solver ✦ Next.js Specialist ✦ Creative Thinker ✦"
           speed={1}
           curveAmount={100}
           direction="right"
           interactive
-          className="text-6xl "
+          className="lg:text-6xl "
         />
       </div>
 
@@ -148,86 +147,15 @@ export default function Projects() {
         width={1000}
         height={1000}
         quality={1000}
-        className="absolute -top-1   w-full h-[500px] left-0 z-0 "
+        className="absolute -top-1   w-full h-[200px] lg:h-[500px] left-0 z-0 "
       />
-      <div className="w-full h-20 bg-linear-to-t from-background via-background/80 to-transparent absolute top-80 left-0"></div>
+      <div className="w-full h-20 bg-linear-to-t from-background via-background/80 to-transparent absolute z-40 top-32 lg:top-80 left-0"></div>
+      <div className="w-full h-20 bg-linear-to-b from-background via-background/80 to-transparent absolute z-50 top-52 lg:top-80 left-0 block lg:hidden"></div>
 
       <HeroParallax products={products} />
-      <div className="relative z-20 w-full flex justify-center -mt-20 ">
-        <StyledWrapper>
-          <a href="#contact" className="flex items-center gap-2">
-            Start a project <ArrowRight />
-            <div className="star-3">
-              <svg
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 784.11 815.53"
-                style={{
-                  shapeRendering: "geometricPrecision",
-                  textRendering: "geometricPrecision",
-                  imageRendering: "optimizeQuality",
-                  fillRule: "evenodd",
-                  clipRule: "evenodd",
-                }}
-                version="1.1"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs />
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer" />
-                  <path
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                    className="fil0"
-                  />
-                </g>
-              </svg>
-            </div>
-          </a>
-        </StyledWrapper>
+      <div className="relative z-20 w-full flex justify-center lg:-mt-20 ">
+        <Button label="Start a Project" targetId="contact" />
       </div>
     </div>
   );
 }
-const StyledWrapper = styled.div`
-  a {
-    position: relative;
-    padding: 6px 35px;
-    background: #000000;
-
-    font-size: 14px;
-    font-weight: 600;
-    color: #f26d44;
-    box-shadow: none;
-    border-radius: 100px;
-
-    border: none;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .star-3 {
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    width: 10px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #f26d44);
-    z-index: 2;
-    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-
-  a:hover .star-3 {
-    transform: rotate(180deg) scale(1.5);
-    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-
-  a:hover {
-    gap: 50px;
-    padding-right: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .fil0 {
-    fill: #f26d44;
-  }
-`;

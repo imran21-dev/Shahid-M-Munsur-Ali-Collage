@@ -10,7 +10,7 @@ import {
 import logo from "@/images/logo.png";
 
 import Image from "next/image";
-import { CodeXml } from "lucide-react";
+import { CodeXml, Dot } from "lucide-react";
 
 export const HeroParallax = ({
   products,
@@ -62,7 +62,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] bg-background py-40 overflow-hidden  antialiased relative z-20 flex flex-col self-auto perspective-[1000px] transform-3d"
+      className="h-[200vh] md:h-[300vh] lg:h-[330vh] xl:h-[300vh] bg-background lg:py-40 overflow-hidden  antialiased relative z-20 flex flex-col self-auto lg:perspective-[1000px] transform-3d"
     >
       <Header />
       <motion.div
@@ -74,7 +74,7 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 lg:space-x-20 mb-10 lg:mb-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -83,7 +83,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row  mb-10 lg:mb-20 space-x-10 lg:space-x-20 ">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -92,7 +92,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 lg:space-x-20">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -114,8 +114,17 @@ export const HeroParallax = ({
           alt="logo"
           width={1000}
           height={1000}
-          className="w-96 mx-auto opacity-20 object-cover pointer-events-none select-none"
+          className="w-28 md:w-44 lg:w-96 mx-auto opacity-20 object-cover pointer-events-none select-none"
         />
+        <ul className="flex lg:hidden text-sm md:text-base font-semibold  justify-center  top-10 opacity-40 relative">
+          <li className="flex">
+            Code <Dot className="opacity-30" />
+          </li>
+          <li className="flex">Create</li>
+          <li className="flex">
+            <Dot className="opacity-30" /> Inspire
+          </li>
+        </ul>
       </motion.div>
     </div>
   );
@@ -123,16 +132,16 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="px-[18.3%] relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
+    <div className="containe_r relative mx-auto py-20 md:py-40  w-full  left-0 top-0">
       <h1
         id="projects"
-        className="text-2xl md:text-7xl font-bold text-foreground"
+        className="text-2xl md:text-7xl font-semibold text-foreground"
       >
         The Ultimate
         <br /> development studio
       </h1>
 
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-foreground/80">
+      <p className="max-w-2xl text-base md:text-xl mt-2 md:mt-8 text-foreground/80">
         I build beautiful, high-performance web experiences using modern
         technologies and frameworks. Passionate about clean code and thoughtful
         design, I turn ideas into impactful digital products.
@@ -162,7 +171,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-120 relative shrink-0"
+      className="group/product h-44 md:h-96 w-60 md:w-120 relative shrink-0"
     >
       <a
         target="_blank"

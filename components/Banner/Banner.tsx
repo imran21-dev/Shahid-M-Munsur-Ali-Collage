@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { Dot, Volume2, VolumeX } from "lucide-react";
 import Button from "../Button";

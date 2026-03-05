@@ -13,7 +13,7 @@ export default function page() {
         {/* <SmoothScroll /> */}
         <Banner />
         <Skills />
-        {/* <Projects /> */}
+        <Projects />
         {/* <HorizontalScroll /> */}
         {/* <Testimonials /> */}
         {/* <Contact /> */}
