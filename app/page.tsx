@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devimran.netlify.app"),
+  metadataBase: new URL("https://devimranx.netlify.app"),
 
   title: "Dev Imran | Full Stack Developer",
   description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Software Engineer Bangladesh",
     "Portfolio",
   ],
-  authors: [{ name: "Dev Imran", url: "https://devimran.netlify.app" }],
+  authors: [{ name: "Dev Imran", url: "https://devimranx.netlify.app" }],
   creator: "Dev Imran",
   alternates: {
     canonical: "/",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Dev Imran | Full Stack Developer",
     description:
       "Explore my skills, projects, services and testimonials. Available for freelance and full-time opportunities.",
-    url: "https://devimran.netlify.app",
+    url: "https://devimranx.netlify.app",
     siteName: "Dev Imran Portfolio",
     images: [
       {
@@ -70,7 +70,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dev Imran",
-  url: "https://devimran.netlify.app",
+  url: "https://devimranx.netlify.app",
   jobTitle: "Full Stack Developer",
   description:
     "Full Stack Developer specializing in React, Next.js and Node.js",

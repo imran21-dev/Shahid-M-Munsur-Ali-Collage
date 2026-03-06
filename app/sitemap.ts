@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://devimran.netlify.app";
+  const baseUrl = "https://devimranx.netlify.app";
 
   return [
     {

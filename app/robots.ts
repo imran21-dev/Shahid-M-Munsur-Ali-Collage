@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [], // ✅ Nothing blocked (no private pages)
       },
     ],
-    sitemap: "https://devimran.netlify.app/sitemap.xml", // ✅ Points Google to your sitemap
-    host: "https://devimran.netlify.app",
+    sitemap: "https://devimranx.netlify.app/sitemap.xml", // ✅ Points Google to your sitemap
+    host: "https://devimranx.netlify.app",
   };
 }

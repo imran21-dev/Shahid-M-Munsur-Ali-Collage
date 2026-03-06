@@ -12,7 +12,7 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devimran.netlify.app"),
+  metadataBase: new URL("https://devimranx.netlify.app"),
   title: {
     default: "Dev Imran | Full Stack Developer",
     template: "%s | Dev Imran",
