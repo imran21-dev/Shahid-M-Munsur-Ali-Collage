@@ -52,7 +52,7 @@ export default function BDTime(): JSX.Element {
       </span>
 
       <h5 className="ml-1 text-[9px] xl:text-xs opacity-80  flex items-center justify-center gap-0.5 pt-1 xl:pt-2 text-secondary">
-        <Clock className="w-2 xl:w-4 " />
+        <Clock className="w-2 xl:w-3 " />
         <span className="pt-0.5"> BD</span>
       </h5>
     </div>
