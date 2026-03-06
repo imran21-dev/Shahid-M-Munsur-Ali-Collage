@@ -150,7 +150,7 @@ export function Sparkles({
       <Particles
         id={id}
         // @ts-nocheck
-        options={defaultOptions}
+        options={defaultOptions as any}
         className={className}
       />
     )
