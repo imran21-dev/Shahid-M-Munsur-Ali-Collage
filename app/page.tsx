@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Dev Imran | Full Stack Developer",
   description:
     "Hi, I'm Imran — a Full Stack Developer specializing in React, Next.js, and Node.js. Explore my skills, projects, services, and get in touch.",
+  icons: {
+    icon: "/favicon-01.jpg",
+  },
   keywords: [
     "Dev Imran",
     "Full Stack Developer Bangladesh",
@@ -83,12 +86,23 @@ const jsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Dev Imran",
+  url: "https://devimranx.netlify.app",
+};
+
 export default function Page() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <Banner />
       <Skills />
