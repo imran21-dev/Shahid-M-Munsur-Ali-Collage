@@ -91,6 +91,9 @@ export default function Footer() {
                   <Link href="/#contact">Contact</Link>
                 )}
               </li>
+              <li className="footer-link">
+                <Link href="/about">About</Link>
+              </li>
             </ul>
           </div>
         </article>

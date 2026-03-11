@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     default: "Dev Imran | Full Stack Developer",
     template: "%s | Dev Imran",
   },
+  icons: {
+    icon: "/favicon-01.jpg",
+  },
   description: "Portfolio of Dev Imran — Full Stack Developer.",
   robots: { index: true, follow: true },
 };

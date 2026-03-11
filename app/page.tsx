@@ -12,9 +12,6 @@ export const metadata: Metadata = {
   title: "Dev Imran | Full Stack Developer",
   description:
     "Hi, I'm Imran — a Full Stack Developer specializing in React, Next.js, and Node.js. Explore my skills, projects, services, and get in touch.",
-  icons: {
-    icon: "/favicon-01.jpg",
-  },
   keywords: [
     "Dev Imran",
     "Full Stack Developer Bangladesh",
